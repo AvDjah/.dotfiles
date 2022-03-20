@@ -1,0 +1,21 @@
+2022/03/19-22:59:44.275 3 Reusing MANIFEST /home/spongy/.config/chromium/Default/Local Storage/leveldb/MANIFEST-000001
+2022/03/19-22:59:44.276 3 Recovering log #12
+2022/03/19-22:59:44.277 3 Reusing old log /home/spongy/.config/chromium/Default/Local Storage/leveldb/000012.log 
+2022/03/19-23:02:13.236 3 Level-0 table #16: started
+2022/03/19-23:02:13.242 3 Level-0 table #16: 57336 bytes OK
+2022/03/19-23:02:13.245 3 Delete type=0 #12
+2022/03/19-23:20:59.692 8 Level-0 table #18: started
+2022/03/19-23:20:59.697 8 Level-0 table #18: 63153 bytes OK
+2022/03/19-23:20:59.700 8 Delete type=0 #15
+2022/03/19-23:20:59.700 8 Compacting 4@0 + 1@1 files
+2022/03/19-23:20:59.704 8 Generated table #19@0: 62 keys, 28328 bytes
+2022/03/19-23:20:59.704 8 Compacted 4@0 + 1@1 files => 28328 bytes
+2022/03/19-23:20:59.706 8 compacted to: files[ 0 1 1 0 0 0 0 ]
+2022/03/19-23:20:59.707 8 Delete type=2 #18
+2022/03/19-23:20:59.707 8 Delete type=2 #13
+2022/03/19-23:20:59.707 8 Delete type=2 #8
+2022/03/19-23:20:59.707 8 Delete type=2 #11
+2022/03/19-23:20:59.707 8 Delete type=2 #16
+2022/03/19-23:43:42.274 8 Level-0 table #21: started
+2022/03/19-23:43:42.284 8 Level-0 table #21: 393710 bytes OK
+2022/03/19-23:43:42.287 8 Delete type=0 #17
