@@ -1,2 +1,3 @@
 # .dotfiles
-Dotfiles
+
+Config files
