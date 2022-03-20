@@ -1,6 +1,0 @@
-2022/03/19-21:51:48.073 36657 Creating DB /home/spongy/.config/discord2/discord/IndexedDB/https_902271654783242291.discordsays.com_0.indexeddb.leveldb since it was missing.
-2022/03/19-21:51:48.080 36657 Reusing MANIFEST /home/spongy/.config/discord2/discord/IndexedDB/https_902271654783242291.discordsays.com_0.indexeddb.leveldb/MANIFEST-000001
-2022/03/19-22:10:59.025 3666c Level-0 table #5: started
-2022/03/19-22:10:59.028 3666c Level-0 table #5: 1179 bytes OK
-2022/03/19-22:10:59.030 3666c Delete type=0 #3
-2022/03/19-22:10:59.030 3666c Manual compaction at level-0 from (begin) .. (end); will stop at (end)
