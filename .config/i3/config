@@ -222,6 +222,8 @@ exec --no-startup-id polybar -r bar1
 # compositer
 exec picom
 
+# notifications(dunst)
+exec dunst
 
 # i3-gaps
 # needed for i3-gaps to work
