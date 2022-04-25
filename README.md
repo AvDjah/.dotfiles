@@ -1,6 +1,6 @@
 # .dotfiles
 
-Config files
+## Config files
 
 ![WOW](/img/WOW.png)
 
