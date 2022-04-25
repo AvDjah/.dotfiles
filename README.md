@@ -2,4 +2,4 @@
 
 Config files
 
-![current setup](/img/wallpaper.png)
+![current setup](/img/current.png)
