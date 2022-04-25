@@ -100,17 +100,18 @@ bindsym $mod+a focus parent
 
 set $i3-resurrect i3-resurrect
 
-set $ws1 "1:"
-set $ws2 "2:"
+set $ws1 "1:"
+set $ws2 "2:²"
 set $ws3 "3:"
 set $ws4 "4:"
-set $ws5 "5:"
-set $ws6 "6:"
-set $ws7 "7:"
-set $ws8 "8:²"
-set $ws9 "9:³"
-set $ws10 "10:⁴"
-
+set $ws5 "5: "
+set $ws6 "5:"
+set $ws7 "6:"
+set $ws8 "8:"
+set $ws9 "9:"
+set $ws10 "10:"
+set $ws11 "11:tmp"
+set $ws12 "12:tmp2"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -123,20 +124,32 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
+bindsym $mod+minus workspace $ws11
+bindsym $mod+plus workspace $ws12
 
 #switch to last used workspace
 bindsym $mod+Tab workspace back_and_forth
 
-
+# move containers
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
 
 # restore workspaces with i3-resurrect
-bindsym $mod+Shift+1 exec $i3-resurrect restore -w "1:"
-bindsym $mod+Shift+2 exec $i3-resurrect restore -w "2:"
-bindsym $mod+Shift+3 exec $i3-resurrect restore -w "3:"
-bindsym $mod+Shift+4 exec $i3-resurrect restore -w "4:"
-bindsym $mod+Shift+5 exec $i3-resurrect restore -w "5:"
-bindsym $mod+Shift+6 exec $i3-resurrect restore -w "6:"
-bindsym $mod+Shift+7 exec $i3-resurrect restore -w "7:"
+#bindsym $mod+Shift+1 exec $i3-resurrect restore -w "1:"
+#bindsym $mod+Shift+2 exec $i3-resurrect restore -w "2:"
+#bindsym $mod+Shift+3 exec $i3-resurrect restore -w "3:"
+#bindsym $mod+Shift+4 exec $i3-resurrect restore -w "4:"
+#bindsym $mod+Shift+5 exec $i3-resurrect restore -w "5:"
+#bindsym $mod+Shift+6 exec $i3-resurrect restore -w "6:"
+#bindsym $mod+Shift+7 exec $i3-resurrect restore -w "7:"
 
 #Put containers in right ws
 
@@ -170,37 +183,23 @@ mode "resize" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
-
-	# move containers
-	bindsym $mod+1 move container to workspace $ws1
-	bindsym $mod+2 move container to workspace $ws2
-	bindsym $mod+3 move container to workspace $ws3
-	bindsym $mod+4 move container to workspace $ws4
-	bindsym $mod+5 move container to workspace $ws5
-	bindsym $mod+6 move container to workspace $ws6
-	bindsym $mod+7 move container to workspace $ws7
-	bindsym $mod+8 move container to workspace $ws8
-	bindsym $mod+9 move container to workspace $ws9
-	bindsym $mod+0 move container to workspace $ws10
 }
 
 bindsym $mod+r mode "resize"
 
-# define colours
-set $bg-color	         #242324
-set $inactive-bg-color   #242324
-set $text-color          #ffffff
-set $inactive-text-color #676E7D
-set $urgent-bg-color     #c5c967
+set $bg-colour              #2f343f 
+set $inactive-bg-colour     #2f343f
+set $text-colour            #f3f4f5
+set $inactive-text-colour   #878E7D
+set $urgent-bg-colour       #E53935
+set $preview-colour         #2f343f
 
-# window colors
-# state                 border              background         text                 indicator
-client.focused          $bg-color           $bg-color          $text-color          #00ff00
-client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
-client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
-
-hide_edge_borders both
+# Window colours
+client.focused                  $bg-colour          $bg-colour          $text-colour             $preview-colour
+client.unfocused                $inactive-bg-colour $inactive-bg-colour $inactive-text-colour    $preview-colour
+client.focused_inactive         $inactive-bg-colour $inactive-bg-colour $inactive-text-colour    $preview-colour
+client.urgent $urgent-bg-colour $urgent-bg-colour   $bg-colour          $text-colour             $preview-colour
+# hide_edge_borders both
 
 # clipboard tool
 exec_always --no-startup-id greenclip daemon>/dev/null
@@ -214,24 +213,24 @@ exec flameshot
 for_window [instance="origin.exe"] floating enable
 
 # wallpaper
-exec_always feh --bg-scale /home/spongy/media/wallpapers/dark.jpg
+exec_always feh --bg-scale /home/spongy/media/wallpapers/bwknights.png
 
 # bar
 exec --no-startup-id polybar -r bar1
 
+#notifications
+exec dunst
+
 # compositer
 exec picom
-
-# notifications(dunst)
-exec dunst
 
 # i3-gaps
 # needed for i3-gaps to work
 # You can also use any non-zero value if you'd like to have a border
-for_window [class=".*"] border pixel 0
+for_window [class=".*"] border pixel 1
 
 # ws gaps
 
-gaps inner 7
-gaps bottom 23
+gaps inner 6
+gaps bottom 22
 

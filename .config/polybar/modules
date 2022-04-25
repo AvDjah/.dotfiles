@@ -1,0 +1,223 @@
+## Aesthetic
+
+  [module/left]
+  type = custom/text
+
+  content = "%{T3}%{T-}"
+  content-background = ${colors.background}
+  content-foreground = ${colors.offwhite}
+
+  [module/right]
+  type = custom/text
+
+  content = "%{T3}%{T-}"
+  content-background = ${colors.background}
+  content-foreground = ${colors.offwhite}
+
+  [module/hdd]
+  type = custom/text
+  content = ""
+
+  [module/sep]
+  type = custom/text
+  content = " | "
+
+  content-background = ${colors.background}
+
+  [module/space]
+  type = custom/text
+  content = " "
+
+## Custom
+
+  [module/updates]
+  type = custom/script
+
+  ;exec = pacman -Qu | wc -l
+  exec = checkupdates | wc -l
+  interval = 1000
+  click-left = exec checkupdates | wc -1
+
+  label = %output% updates
+  format-foreground = ${colors.foreground}
+  format-background = ${colors.background}
+
+  [module/dunst]
+  type = custom/script
+
+  exec = dunstctl count | grep -i "history" | tr -d "History: "
+  intervel = 1
+
+  click-left = exec dunstctl history-pop  
+  click-right = exec dunstctl close-all
+
+  label =  %output%
+
+  [module/tray]
+  type = custom/text
+
+  content = ""
+
+  click-left = bash ~/.config/polybar/scripts/tray.sh
+  click-right = bash ~/.config/polybar/scripts/killtray.sh
+
+  [module/sysinfo]
+  type = custom/text
+
+  content =""
+  content-background = ${colors.offwhite}
+
+  click-left = exec ~/.config/polybar/scripts/sysbar.sh
+  click-right = exec ~/.config/polybar/scripts/killsysbar.sh
+
+  [module/spotify]
+  type = custom/script
+
+  exec = python ~/.config/polybar/scripts/spotify.py -f '{artist}:{song}'
+  interval = 1
+
+  format = <label>
+  format-background = ${colors.offwhite}
+
+  click-left = playerctl --player=spotify play-pause
+  click-right = playerctl --player=spotify next
+  click-middle = playerctl --player=spotify previous
+
+## System
+# WM
+  [module/i3]
+  type = internal/i3
+
+  label-focused = %name%
+  label-focused-underline = ${colors.foreground}
+  label-focused-padding = 3.5pt
+
+  label-unfocused = %name%
+  label-unfocused-padding = 3.5pt
+
+  label-visible = %name%
+
+  label-urgent = %name%
+  label-urgent-padding = 3.5pt
+
+  label-seperator = "|"
+  label-seperator-padding = 1
+
+  strip-wsnumbers = True
+
+  format-background = ${colors.background}
+
+  enable-scroll = True
+  enable-click = True
+
+# Hardware
+  [module/cpu]
+  type = internal/cpu
+  interval = 2
+  label =  CPU(%percentage:1%%)
+
+  [module/gpu]
+  type = custom/script
+
+  exec = ~/.config/polybar/scripts/gpu.sh
+  ;exec = nvidia-smi --format=nounits,csv,noheader --query-gpu=temperature.gpu | xargs echo
+  tail = true
+  interval = 5
+
+  label =  GPU(usage/%output%)
+
+  [module/memory]
+  type = internal/memory
+  interval = 2
+
+  label =  RAM(%percentage_used:1%%)
+  format-background  = ${colors.background}
+
+  [module/uptime]
+  type = custom/script
+  exec = uptime | awk -F, '{sub(".*up ",x,$1);print $1}'
+  interval = 100
+
+  label =  Uptime : %output%
+  format-foreground = ${colors.foreground}
+  format-background = ${colors.background}
+
+
+# Mounted
+  [module/fs-/]
+  type = internal/fs
+  interval = 25
+  mount-0 = /
+  label-mounted = /* %percentage_used%%
+
+  [module/fs-ssd]
+  type = internal/fs
+  interval = 25
+  mount-0 = /home/spongy/SSD
+  label-mounted = /ssd %percentage_used%%
+
+# Network
+  [network-base]
+  type = internal/network
+  interval = 5
+  format-connected = <label-connected>
+  format-disconnected = <label-disconnected>
+  label-disconnected = %{F#F0C674}%ifname%%{F#707880} disconnected
+
+  [module/wifi]
+  inherit = network-base
+  interface-type = wireless
+  label-connected =  %upspeed:2%%downspeed:2%
+
+  [module/eth]
+  inherit = network-base
+  interface-type = wired
+  label-connected = %{F#F0C674}%ifname%%{F-} %local_ip%
+
+## Volume 
+  [module/pipewire]
+  type = custom/script
+  tail = true
+  exec = ~/.config/polybar/scripts/pipewire.sh
+  
+  label = "%output%"
+  label-font = 2
+  label-foreground = ${colors.foreground}
+  label-background = ${colors.offwhite}
+
+  click-right = exec pavucontrol &
+  click-left = ~/.config/polybar/scripts/pipewire.sh mute &
+  
+  scroll-up = ~/.config/polybar/scripts/pipewire.sh up &
+  scroll-down = ~/.config/polybar/scripts/pipewire.sh down &
+
+  [module/pipewiresys]
+  type = custom/script
+  tail = true
+  exec = ~/.config/polybar/scripts/pipewiresys.sh
+  
+  label = "%output%"  
+
+
+## Time
+  [module/date]
+  type = internal/date
+  interval = 1
+
+  date = %A %B %d %Y
+  date-alt = %m/%d/%Y
+
+  label = %date%
+  label-foreground = ${colors.foreground}
+  format-background  = ${colors.background}
+
+  [module/time]
+  type = internal/date
+  interval = 1
+
+  date = %I:%M.%p
+  date-alt = %H:%M:%S.%p
+
+  label = %date%
+  label-foreground = ${colors.foreground}
+  format-background = ${colors.offwhite}
