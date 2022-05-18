@@ -7,7 +7,7 @@
 
 <h2 align="center"> Current Setup </h2>
 <p align="center">
-  <img src="/img/current.png">
+  <img src="/img/setup.png">
 </p>
 
 
@@ -17,7 +17,7 @@
 </p>
 <p align="center">
 put the files in the .config folder in your ~/.config/ folder  
-_make sure to tweak to your needs, lots of user specific stuff that needs to be changed_
+make sure to tweak to your needs, theres some user specific stuff that needs to be changed
 </p>
 
 <h2 align="center">Using software from</h1> 
