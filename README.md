@@ -22,10 +22,10 @@ _make sure to tweak to your needs, lots of user specific stuff that needs to be 
 
 <h2 align="center">Using software from</h1> 
 <p align="center">
-[13-gaps](https://github.com/Airblader/i3)
-[picom](https://github.com/yshui/picom)
-[polybar](https://github.com/polybar/polybar)
-[rofi](https://github.com/davatorium/rofi)
-[dunst](https://github.com/dunst-project/dunst)
-[betterlockscreen](https://github.com/betterlockscreen/betterlockscreen)
+<a href="https://github.com/Airblader/i3">i3-gaps</a>
+<a href="https://github.com/yshui/picom"> picom</a>
+<a href="https://github.com/polybar/polybar">polybar</a>
+<a href="https://github.com/davatorium/rofi">rofi</a>
+<a href="https://github.com/dunst-project/dunst">dunst</a>
+<a href="https://github.com/betterlockscreen/betterlockscreen">betterlockscreen</a>
 </p>
