@@ -7,7 +7,7 @@
 
 <h2 align="center"> Current Setup </h2>
 <p align="center">
-  <img src="/img/current.png">
+  <img src="/img/setup.png">
 </p>
 
 
