@@ -6,8 +6,8 @@
 ## Current Setup
 <p align="center">
   <img 
-    width="1280"
-    height="720"
+    width="1250"
+    height="700"
     src="/img/current.png"
   >
 </p>
