@@ -1,13 +1,13 @@
 <h1 align="center">.dotfiles</h1>
 
 <p align="center">
-  <img src="/img/WOW.png>">
+  <img src="/img/WOW.png">
   <img src="/img/WOW.png">
 
 
 <h2 align="center"> Current Setup </h2>
 <p align="center">
-  <img width="1250" height="700" src="/img/current.png">
+  <img src="/img/current.png">
 </p>
 
 
