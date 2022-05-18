@@ -1,32 +1,30 @@
-## Aesthetic
-
   [module/left]
   type = custom/text
 
-  content = "%{T3}%{T-}"
-  content-background = ${colors.background}
-  content-foreground = ${colors.offwhite}
+  format = "%{T3}%{T-}"
+  format-background = ${colors.background}
+  format-foreground = ${colors.primary}
 
   [module/right]
   type = custom/text
 
-  content = "%{T3}%{T-}"
-  content-background = ${colors.background}
-  content-foreground = ${colors.offwhite}
+  format = "%{T3}%{T-}"
+  format-background = ${colors.background}
+  format-foreground = ${colors.primary}
 
   [module/hdd]
   type = custom/text
-  content = ""
+  format = ""
 
   [module/sep]
   type = custom/text
-  content = " | "
 
-  content-background = ${colors.background}
+  format = " | "
+  format-background = ${colors.background}
 
   [module/space]
   type = custom/text
-  content = " "
+  format = " "
 
 ## Custom
 
@@ -46,26 +44,29 @@
   type = custom/script
 
   exec = dunstctl count | grep -i "history" | tr -d "History: "
-  intervel = 1
+  tail = true
+  #intervel = 1
 
   click-left = exec dunstctl history-pop  
   click-right = exec dunstctl close-all
+  click-middle = exec ~/.config/polybar/scripts/dunst.sh
 
   label =  %output%
 
   [module/tray]
   type = custom/text
 
-  content = ""
+  format = ""
+  format-background = ${colors.primary}
 
-  click-left = bash ~/.config/polybar/scripts/tray.sh
-  click-right = bash ~/.config/polybar/scripts/killtray.sh
+  click-left = exec ~/.config/polybar/scripts/tray.sh
+  click-right = exec ~/.config/polybar/scripts/killtray.sh
 
   [module/sysinfo]
   type = custom/text
 
-  content =""
-  content-background = ${colors.offwhite}
+  format =""
+  format-background = ${colors.primary}
 
   click-left = exec ~/.config/polybar/scripts/sysbar.sh
   click-right = exec ~/.config/polybar/scripts/killsysbar.sh
@@ -77,7 +78,7 @@
   interval = 1
 
   format = <label>
-  format-background = ${colors.offwhite}
+  format-background = ${colors.primary}
 
   click-left = playerctl --player=spotify play-pause
   click-right = playerctl --player=spotify next
@@ -183,9 +184,9 @@
   label = "%output%"
   label-font = 2
   label-foreground = ${colors.foreground}
-  label-background = ${colors.offwhite}
+  label-background = ${colors.primary}
 
-  click-right = exec pavucontrol &
+  click-right = exec pavucontrol-qt &
   click-left = ~/.config/polybar/scripts/pipewire.sh mute &
   
   scroll-up = ~/.config/polybar/scripts/pipewire.sh up &
@@ -215,9 +216,9 @@
   type = internal/date
   interval = 1
 
-  date = %I:%M.%p
-  date-alt = %H:%M:%S.%p
+  date = %I:%M %p
+  date-alt = %H:%M:%S %p
 
   label = %date%
   label-foreground = ${colors.foreground}
-  format-background = ${colors.offwhite}
+  format-background = ${colors.primary}

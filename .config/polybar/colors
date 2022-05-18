@@ -1,9 +1,6 @@
 [colors]
 background = #0C0B0A
-foreground = #FFEEE3
+foreground = #FFFFFF
+primary = #EA3240
+accent = #00000000
 transparent = #00000000
-offwhite = #A79B94
-purple = #BC96E6
-torq = #44FFD1
-red = #FF3366
-violet = #AFB3F7
